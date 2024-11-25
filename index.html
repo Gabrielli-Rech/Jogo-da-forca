@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="forca.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Jogo da Forca</h1>
+        </header>
+
+        <section class="forca-container" aria-label="Área da forca">
+            <div class="forca">
+                <div class="poste" aria-hidden="true"></div>
+                <div class="trave" aria-hidden="true"></div>
+                <div class="corda" aria-hidden="true"></div>
+                <div class="boneco" aria-label="Boneco">
+                    <div class="cabeca"></div>
+                    <div class="corpo"></div>
+                    <div class="braco-esq"></div>
+                    <div class="braco-dir"></div>
+                    <div class="perna-esq"></div>
+                    <div class="perna-dir"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="palavra-container" aria-label="Palavra secreta">
+            <p class="palavra" aria-live="polite" aria-atomic="true">_ _ _ _ _</p>
+        </section>
+
+        <section class="letras-container" aria-label="Área de interação">
+            <form id="tentativa-form" aria-label="Formulário para tentar uma letra">
+                <label for="letra-input">Tente uma letra:</label>
+                <input 
+                    type="text" 
+                    id="letra-input" 
+                    maxlength="1" 
+                    class="letra-input" 
+                    placeholder="A" 
+                    required 
+                    aria-required="true" 
+                >
+                <button type="submit" class="botao-tentar">Tentar</button>
+            </form>
+        </section>
+
+        <section class="letras-erradas" aria-label="Letras erradas">
+            <p>Letras erradas: <span id="erradas" aria-live="polite"></span></p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* Variáveis para temas e reutilização */
+:root {
+    --cor-fundo: #f3f3f3;
+    --cor-primaria: #007BFF;
+    --cor-primaria-hover: #0056b3;
+    --cor-texto: #333;
+    --cor-erro: #d9534f;
+    --cor-boneco: #555;
+    --cor-boneco-pele: #f4d9c6;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --borda-radius: 10px;
+}
+
+/* Estilização geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+    width: 400px;
+    max-width: 90%; /* Responsividade */
+}
+
+/* Títulos */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--cor-texto);
+}
+
+/* Área da forca */
+.forca-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 0 auto 20px auto;
+}
+
+.forca {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.poste,
+.trave,
+.corda {
+    background-color: var(--cor-boneco);
+}
+
+.poste {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 100%;
+}
+
+.trave {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 10px;
+}
+
+.corda {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    width: 5px;
+    height: 50px;
+    background-color: #aaa;
+}
+
+/* Boneco */
+.boneco .cabeca {
+    position: absolute;
+    top: 50px;
+    left: 65%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--cor-boneco-pele);
+    border-radius: 50%;
+    border: 2px solid var(--cor-boneco);
+}
+
+.boneco .corpo {
+    position: absolute;
+    top: 80px;
+    left: 72%;
+    width: 5px;
+    height: 60px;
+    background-color: var(--cor-boneco);
+}
+
+.boneco .braco-esq,
+.boneco .braco-dir {
+    position: absolute;
+    top: 90px;
+    width: 30px;
+    height: 5px;
+    background-color: var(--cor-boneco);
+}
+
+.boneco .braco-esq {
+    left: 42%;
+    transform: rotate(45deg);
+}
+
+.boneco .braco-dir {
+    left: 72%;
+    transform: rotate(-45deg);
+}
+
+.boneco .perna-esq,
+.boneco .perna-dir {
+    position: absolute;
+    top: 140px;
+    width: 30px;
+    height: 5px;
+    background-color: var(--cor-boneco);
+}
+
+.boneco .perna-esq {
+    left: 42%;
+    transform: rotate(-30deg);
+}
+
+.boneco .perna-dir {
+    left: 72%;
+    transform: rotate(30deg);
+}
+
+/* Palavra oculta */
+.palavra-container {
+    margin: 20px 0;
+}
+
+.palavra {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: var(--cor-texto);
+    font-weight: bold;
+}
+
+/* Entrada de letras */
+.letras-container {
+    margin: 20px 0;
+}
+
+.letra-input {
+    padding: 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 60px;
+    text-align: center;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: var(--borda-radius);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.letra-input:focus {
+    border-color: var(--cor-primaria);
+}
+
+/* Botão de tentativa */
+.botao-tentar {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-tentar:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* Letras erradas */
+.letras-erradas {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--cor-erro);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .forca-container {
+        width: 150px;
+        height: 200px;
+    }
+
+    .palavra {
+        font-size: 1.2rem;
+    }
+
+    .letra-input {
+        width: 50px;
+    }
+
+    .botao-tentar {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
